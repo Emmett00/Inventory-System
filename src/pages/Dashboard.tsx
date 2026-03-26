@@ -13,7 +13,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col min-h-[calc(100vh-175px)]"> 
       {/*Title*/}
-      <h1 className="text-2xl font-semibold mb-6 text-blue-400">
+      <h1 className="text-2xl font-semibold mb-6 text-white">
         Dashboard
       </h1>
 
@@ -21,19 +21,19 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-[#020617] border border-gray-800 rounded-xl p-4">
           <p className="text-gray-400 text-sm">Total Products</p>
-          <h2 className="text-2xl font-bold mt-2">{totalItems}</h2>
+          <h2 className="text-2xl font-bold mt-2 text-white">{totalItems}</h2>
         </div>
 
         <div className=" bg-[#020617] border border-gray-800 rounded-xl p-4">
           <p className="text-gray-400 text-sm">Total Value</p>
-          <h2 className="text-2xl font-bold mt-2">
+          <h2 className="text-2xl font-bold mt-2 ">
             {totalValue.toLocaleString()} THB
           </h2>
         </div>
 
         <div className="bg-[#020617] border border-gray-800 rounded-xl p-4">
           <p className="text-gray-400 text-sm">Out of Stock</p>
-          <h2 className="text-2xl font-bold mt-2 text-red-400">
+          <h2 className="text-2xl font-bold mt-2 text-white">
             {outOfStock}
           </h2>
         </div>

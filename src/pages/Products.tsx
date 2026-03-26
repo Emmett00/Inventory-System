@@ -25,7 +25,7 @@ export default function Products() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold mb-6 text-blue-400">
+      <h1 className="text-2xl font-semibold mb-6 text-white">
         Products
       </h1>
 

@@ -11,7 +11,7 @@ function App() {
         <BrowserRouter>
           <nav className="bg-[#020617] border-b border-gray-800 shrink-0">
             <div className="max-w-4xl mx-auto flex justify-between items-center px-4 py-3">
-              <h1 className="font-semibold text-blue-400">
+              <h1 className="font-semibold text-white">
                 Inventory System
               </h1>
 
