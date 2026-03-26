@@ -25,14 +25,16 @@ export default function Products() {
 
   return (
     <div>
+      {/* 1. หัวข้อหน้า (สีฟ้าสว่างเหมือนเดิม) */}
       <h1 className="text-2xl font-semibold mb-6 text-blue-400">
         Products
       </h1>
 
+      {/* 2. ส่วน Input 3 ช่องเรียงกัน (แนวนอน) */}
       <div className="flex flex-row w-full gap-4">
-        {/*Name Input*/}
+        {/* Name */}
         <div className="flex flex-col flex-1 gap-1">
-          <label className="text-white font-semibold">Products</label>
+          <label className="text-white font-semibold ml-1">Products</label>
           <input 
             type="text" 
             value={name}
@@ -42,9 +44,9 @@ export default function Products() {
           />
         </div>
 
-        {/*Price Input*/}
+        {/* Price */}
         <div className="flex flex-col flex-1 gap-1">
-          <label className="text-white font-semibold">Price</label>
+          <label className="text-white font-semibold ml-1">Price</label>
           <input 
             type="number" 
             value={price}
@@ -53,9 +55,9 @@ export default function Products() {
           />
         </div>
 
-        {/*Quantity Input*/}
+        {/* Quantity */}
         <div className="flex flex-col flex-1 gap-1">
-          <label className="text-white font-semibold">Quantity</label>
+          <label className="text-white font-semibold ml-1">Quantity</label>
           <input 
             type="number" 
             value={quantity}
@@ -65,6 +67,7 @@ export default function Products() {
         </div>
       </div>
       
+      {/* 3. ปุ่ม Add Product (สีน้ำเงิน กว้างเต็มจอ) */}
       <button
         style={{ marginTop: '24px' }} 
         className="w-full bg-blue-600 py-2 rounded-lg mb-6 hover:bg-blue-500 text-white font-medium transition"
@@ -72,7 +75,7 @@ export default function Products() {
         + Add Product
       </button>
 
-      {/* Search */}
+      {/* 4. ช่อง Search (อยู่ใต้ปุ่ม Add ตาม Layout เดิมที่คุณต้องการ) */}
       <input
         className="w-full bg-[#020617] border border-gray-700 rounded-lg px-3 py-2 mb-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Search product..."
@@ -80,12 +83,16 @@ export default function Products() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* List */}
+      {/* 5. รายการสินค้า (List) */}
       <div className="space-y-3">
         {filtered.map((p: Product) => (
           <div
             key={p.id}
-            className={`flex justify-between items-center p-4 rounded-xl border ${p.quantity === 0? "bg-red-900/30 border-red-700": "bg-[#020617] border-gray-700"}`}
+            className={`flex justify-between items-center p-4 rounded-xl border ${
+              p.quantity === 0
+                ? "bg-red-900/30 border-red-700"
+                : "bg-[#020617] border-gray-700"
+            }`}
           >
             <div className="text-left">
               <p className="font-medium text-white">{p.name}</p>
@@ -100,13 +107,11 @@ export default function Products() {
                 onClick={() => updateQuantity(p.id, -1)}>
                 -
               </button>
-
               <button
                 className="w-8 h-8 flex items-center justify-center border border-gray-600 rounded text-white hover:bg-gray-800"
                 onClick={() => updateQuantity(p.id, 1)}>
                 +
               </button>
-
               <button
                 className="text-red-400 hover:text-red-300 ml-2"
                 onClick={() => deleteProduct(p.id)}>

@@ -11,7 +11,7 @@ export default function Dashboard() {
   const outOfStock = products.filter((p: Product) => p.quantity === 0).length;
 
   return (
-    <div className="flex flex-col min-h-[calc(100vh-120px)]">
+    <div className="flex flex-col min-h-[calc(100vh-230px)]">
       {/*Title*/}
       <h1 className="text-2xl font-semibold mb-6 text-blue-400">
         Dashboard
@@ -43,7 +43,7 @@ export default function Dashboard() {
       </div>
 
       {/*Developed by*/}
-      <div className="mt-auto py-10 flex flex-col items-center justify-center gap-1 text-sm text-gray-400">
+      <div className="mt-auto mb-25 flex flex-col items-center justify-center gap-1 text-sm text-gray-400">
         <p className="font-medium whitespace-nowrap">
           Developed by Emmett Meechai Salmon
         </p>
